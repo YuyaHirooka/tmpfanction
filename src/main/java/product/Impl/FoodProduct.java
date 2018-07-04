@@ -8,19 +8,20 @@ public class FoodProduct extends Product {
     private int stockNumber;
     private String name;
 
-    public FoodProduct(String  name, int stockNumber) {
+    public FoodProduct(String name, int stockNumber) {
         this.stockNumber = stockNumber;
         this.name = name;
 
     }
 
     @Override
-    public String consume() {
-        if (stockNumber <= 0) {
+    public void consume() {
+        if (stockNumber > 0) {
             stockNumber--;
-            return name + "を食べる";
+            System.out.println(name + "を食べる");
+        } else {
+            System.out.println(name + "がない!!!!");
         }
-        return name + "がない!!!!";
     }
 
     @Override
